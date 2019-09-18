@@ -1,3 +1,5 @@
+package chapter2
+
 object Lesson2_4 extends App {
 
   class Counter(val count: Int) {

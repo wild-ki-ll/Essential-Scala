@@ -1,3 +1,5 @@
+package chapter3
+
 object Lesson3_4_5_2 extends App {
 
   case class Director(firstName: String, lastName: String, year: Int);

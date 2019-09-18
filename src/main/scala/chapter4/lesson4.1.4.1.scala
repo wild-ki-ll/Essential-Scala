@@ -1,3 +1,5 @@
+package chapter4
+
 object Lesson4_1_4_1 extends App {
 
   trait Feline {

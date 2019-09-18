@@ -1,3 +1,5 @@
+package chapter3
+
 object Lesson3_4_5_3 extends App {
 
   case class Counter (val count: Int = 0) {

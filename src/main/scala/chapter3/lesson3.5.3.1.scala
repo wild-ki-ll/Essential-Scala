@@ -1,3 +1,5 @@
+package chapter3
+
 object Lesson3_5_3_1 extends App {
 
   case class Cat(color: String, food: String);

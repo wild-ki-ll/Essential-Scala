@@ -1,3 +1,5 @@
+package chapter2 
+
 object Lesson2_6 extends App {
   class Adder(amount: Int) {
     def add(in: Int) = in + amount
