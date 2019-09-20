@@ -7,10 +7,10 @@ object Lesson4_4_4_2 extends App {
   final case class Fail(f: String) extends Calulator;
 
   sealed trait Oper;
-  final case object + extends Oper;
-  final case object - extends Oper;
-  final case object / extends Oper;
-  final case object * extends Oper;
+  case object + extends Oper;
+  case object - extends Oper;
+  case object / extends Oper;
+  case object * extends Oper;
 
   def calc (a: Int, o: Oper, b: Int): Calulator =
     o match {

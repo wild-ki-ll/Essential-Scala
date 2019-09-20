@@ -11,19 +11,19 @@ object Lesson4_2_2_2 extends App {
     def isDark = !isLight
   }
 
-  final case object Red extends Color {
+  case object Red extends Color {
     val r: Double = 1.0;
     val g: Double = 0.0;
     val b: Double = 0.0;
   }
 
-  final case object Yellow extends Color {
+  case object Yellow extends Color {
     val r: Double = 1.0;
     val g: Double = 1.0;
     val b: Double = 0.0;
   }
 
-  final case object Pink extends Color {
+  case object Pink extends Color {
     val r: Double = 1.0;
     val g: Double = 1.0;
     val b: Double = 1.0;

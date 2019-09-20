@@ -4,7 +4,7 @@ object Lesson4_2_2_3 extends App {
 
   sealed trait DivisionResult;
   final case class Finite (res: Int) extends DivisionResult;
-  final case object Infinite extends DivisionResult;
+  case object Infinite extends DivisionResult;
 
   object divide {
     def apply(a: Int, b: Int): DivisionResult = {
