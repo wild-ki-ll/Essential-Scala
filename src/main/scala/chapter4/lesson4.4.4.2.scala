@@ -1,7 +1,5 @@
 package chapter4
 
-import chapter4.Lesson4_4_4_2.Fail
-
 object Lesson4_4_4_2 extends App {
 
   sealed trait Calulator;
