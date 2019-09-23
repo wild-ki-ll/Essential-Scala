@@ -3,30 +3,33 @@ package chapter4
 import scala.annotation.tailrec
 
 object Lesson4_6_3_1 extends App {
-  @tailrec
-  def lengthTailRec (acc: Int, lst: IntList): Int = {
-    lst match {
-      case End => acc;
-      case Pair(_, t) => lengthTailRec(acc+1, t)
-    }
-  }
-  @tailrec
-  def propductTailRec (acc: Int, lst: IntList): Int = {
-    lst match {
-      case End => acc;
-      case Pair(h, t) => propductTailRec(acc * h, t)
-    }
-  }
-
   sealed trait IntList {
-    def length: Int = lengthTailRec(0, this)
-    def product: Int = propductTailRec(1, this)
+    def length: Int = {
+      @tailrec
+      def impl (acc: Int, lst: IntList): Int =
+        lst match {
+          case End => acc;
+          case Pair(_, t) => impl(acc+1, t)
+        }
+
+      impl(0, this)
+    }
+
+    def product: Int = {
+      @tailrec
+      def impl (acc: Int, lst: IntList): Int =
+        lst match {
+          case End => acc;
+          case Pair(h, t) => impl(acc * h, t)
+        }
+      impl(1, this)
+    }
+
     def double: IntList =
       this match {
         case End => End;
         case Pair(h, t) => Pair(h * 2, t.double)
       }
-
   }
 
   case object End extends IntList
@@ -44,5 +47,5 @@ object Lesson4_6_3_1 extends App {
   println(example.double == Pair(2, Pair(4, Pair(6, End))))
   println(example.tail.double == Pair(4, Pair(6, End)))
   println(End.double == End)
-
 }
+
