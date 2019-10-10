@@ -1,7 +1,10 @@
 package chapter5
 
+import scala.annotation.tailrec
+
 object Lesson5_1_3_3 extends App {
   sealed trait LinkedList[A] {
+    @tailrec
     def contains (i: A): Boolean =
       this match {
         case Pair(h, t) => if (h == i) true else t.contains(i)

@@ -1,8 +1,11 @@
 package chapter5
 
+import scala.annotation.tailrec
+
 object Lesson5_1_3_4 extends App {
   sealed trait LinkedList[A] {
     def apply (idx: Int) = {
+      @tailrec
       def impl (i: Int, lst: LinkedList[A]): A = lst match {
         case Pair(h, t) => if (i == idx) h else impl(i + 1, t)
         case End() => throw new Exception("Bad things happened")

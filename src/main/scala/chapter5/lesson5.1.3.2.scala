@@ -1,8 +1,11 @@
 package chapter5
 
+import scala.annotation.tailrec
+
 object Lesson5_1_3_2 extends App {
   sealed trait LinkedList[A] {
     def length: Int = {
+     @tailrec
      def impl(l: LinkedList[A], len: Int): Int= l match {
        case Pair(h, t) => impl(t, len+1);
        case End() => len
